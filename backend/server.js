@@ -42,7 +42,11 @@ const fortune = (ctx, body = null, status = 200) => {
 }
 
 const app = new Koa();
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  }),
+);
 app.use(koaBody({
     json: true
 }));
